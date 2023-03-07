@@ -11,26 +11,38 @@ Caso o conteúdo contido no campo tenha 3 caracteres ou mais o background deve s
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 
 <body>
-    <input type="text" onfocus="campo('#FFFF00', '200px')" onblur="campoSemFoco('200px', '#fff')">
 
-    <div id="quadrado" style="border: solid 1 px #000; width: 150px; height: 150px;"></div>
+
+    <input type="text" id="inputCampo" onfocus="onFocus()" onblur="onBlur()">
+    <!-- onFocus = -->
+
     <script>
-        let caracter
-        function campo(corDeFundo) {
-            document.getElementById('quadrado').style.backgroundColor = corDeFundo
-    
+        var inputCampo = document.getElementById('inputCampo')
+
+        function onFocus() {
+            document.getElementById('inputCampo').style.backgroundColor = 'yellow'
         }
 
-        function campoSemFoco(corDeFundo) {
-            document.getElementById('quadrado').style.backgroundColor = corDeFundo
-    
+        function onBlur() { //
+            var value = inputCampo.value
+
+            if (value.length < 3) {
+                document.getElementById('inputCampo').style.backgroundColor = 'red'
+            } else {
+                document.getElementById('inputCampo').style.backgroundColor = 'green'
+            }
+
         }
     </script>
+
+
+
+
 </body>
 
 </html>
