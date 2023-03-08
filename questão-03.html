@@ -19,27 +19,34 @@ Caso o conteúdo contido no campo tenha 3 caracteres ou mais o background deve s
 
 
     <input type="text" id="inputCampo" onfocus="onFocus()" onblur="onBlur()">
-    <!-- onFocus = -->
+    <!-- onfocus = quando o input está selecionado
+         onblur = quando o input não está selecionado -->
 
     <script>
-        var inputCampo = document.getElementById('inputCampo')
+    
 
-        function onFocus() {
+
+        function onFocus() { 
             document.getElementById('inputCampo').style.backgroundColor = 'yellow'
         }
 
-        function onBlur() { //
+        function onBlur() { 
             var value = inputCampo.value
 
-            if (value.length < 3) {
+            if (value.length < 3) { 
                 document.getElementById('inputCampo').style.backgroundColor = 'red'
             } else {
                 document.getElementById('inputCampo').style.backgroundColor = 'green'
             }
 
+
         }
     </script>
-
+<!-- A atividade pediu para adicionar o campo input, e coloquei o id para identificar tal campo, o onfocus ocorre quando
+ o input está selecionado e o onblur quando o input não está selecionado. A function onFocus seria para quando o input estivesse
+selecionado, em que ele ficaria amarelo, para isso usei o document.getElementById(que seleciona o elemento pelo id).style.backgroundColor que muda 
+a cor do fundo(background) do elmento identificado por tal id. A function onBlur seria para quando o input não estivesse selcionado, e se o valor de caracteres digitados
+fosse menor que 3 o input ficaria vermelho, já se o valor de caracteres digitados fosse igual ou maior que 3 o input ficaria verde. -->
 
 
 
